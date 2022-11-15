@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "avb-cicd-demo-mob",
+    "slug": "avb-cicd-demo-mob",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "avb-cicd-demo-mob"
+}
