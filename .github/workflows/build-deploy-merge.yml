@@ -17,11 +17,9 @@ jobs:
       - name: Install node modules
         run: |
          yarn install
-      - name: Create a Production Build
-        run: npm run build
       - name: Run test
         run: |
-         yarn test-ci
+         yarn test
       - name: Cache Gradle Wrapper
         uses: actions/cache@v2
         with:
