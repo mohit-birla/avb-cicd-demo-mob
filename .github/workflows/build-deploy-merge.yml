@@ -35,18 +35,18 @@ jobs:
           ${{ runner.os }}-gradle-caches-
       - name: Make Gradlew Executable
         run: cd android && chmod +x ./gradlew
-      # - name: Build Android App Bundle
-      #   run: |
-      #    cd android && ./gradlew bundleRelease --no-daemon
-      # - name: Sign App Bundle
-      #   id: sign_app
-      #   uses: r0adkll/sign-android-release@v1
-      #   with:
-      #    releaseDirectory: android/app/build/outputs/bundle/release
-      #    signingKeyBase64: ${{ secrets.ANDROID_SIGNING_KEY }}
-      #    alias: ${{ secrets.ANDROID_SIGNING_ALIAS }}
-      #    keyStorePassword: ${{ secrets.ANDROID_SIGNING_STORE_PASSWORD }}
-      #    keyPassword: ${{ secrets.ANDROID_SIGNING_KEY_PASSWORD }}
+      - name: Build Android App Bundle
+        run: |
+         cd android && ./gradlew bundleRelease --no-daemon
+      - name: Sign App Bundle
+        id: sign_app
+        uses: r0adkll/sign-android-release@v1
+        with:
+         releaseDirectory: android/app/build/outputs/bundle/release
+         signingKeyBase64: ${{ "secrets.ANDROID_SIGNING_KEY" }}
+         alias: ${{ secrets.ANDROID_SIGNING_ALIAS }}
+         keyStorePassword: ${{ secrets.ANDROID_SIGNING_STORE_PASSWORD }}
+         keyPassword: ${{ secrets.ANDROID_SIGNING_KEY_PASSWORD }}
       # - uses: FirebaseExtended/action-hosting-deploy@v0
       #   with:
       #     repoToken: '${{ secrets.GITHUB_TOKEN }}'
