@@ -44,7 +44,7 @@ jobs:
         with:
          releaseDirectory: android/app/build/outputs/bundle/release
          signingKeyBase64: Uf2/4x22D2pKLSJSumLxdq5x4KM=
-         alias: 01
+         alias: '01'
          keyStorePassword: ${{ secrets.ANDROID_SIGNING_STORE_PASSWORD }}
          keyPassword: ${{ secrets.ANDROID_SIGNING_KEY_PASSWORD }}
       # - uses: FirebaseExtended/action-hosting-deploy@v0
